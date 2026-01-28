@@ -1,9 +1,10 @@
-function Cabecera(props){
+function Cabecera({user}){
 
     return (
 
             <header>
-                <p>HEADER {props.usuario}</p>
+                <p>NOMBRE: {user.nombre}</p>
+                <p>ROL: {user.rol}</p>
 
             </header>
     

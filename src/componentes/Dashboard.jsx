@@ -1,9 +1,14 @@
+import { useToken } from "../contexts/TokenContext"
+
 function Dashboard(props){
+
+
+    const { token } = useToken()
 
     return (
 
             <main>
-                <p>MAIN {props.token}</p>
+                <p>MAIN {token}</p>
             </main>
     
     )
