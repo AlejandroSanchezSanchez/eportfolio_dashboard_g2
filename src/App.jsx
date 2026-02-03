@@ -10,7 +10,7 @@ import { UserProvider } from './contexts/UserContext'
 import NuevaEvidencia from './componentes/NuevaEvidencia'
 
 function App() {
-  const [user, setUser] = useState({nombre : 'Alejandro', rol : 'Estudiante'})
+  const [user, setUser] = useState({nombre : 'Alejandro Sánchez', rol : 'Estudiante'})
   const token = '001';
   const menu = 'BUENAS';
 
