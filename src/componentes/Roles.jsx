@@ -1,18 +1,14 @@
-import { useUser } from "../contexts/UserContext";
+import { useUser } from '../contexts/UserContext'
+import MenuLateral from './MenuLateral'
 
-function Roles(props){
+function Roles() {
+  const { userName } = useUser()
 
-    const { user } = useUser();
-
-    return (
-
-            <aside>
-                <p>ROLES {props.menu}</p>
-                <p>NOMBRE: {user.name}</p>
-                <p>ROL: {user.rol}</p>
-            </aside>
-    
-    )
-
+  return (
+    <aside>
+      <p>NOMBRE: {userName}</p>
+      <MenuLateral />
+    </aside>
+  )
 }
 export default Roles

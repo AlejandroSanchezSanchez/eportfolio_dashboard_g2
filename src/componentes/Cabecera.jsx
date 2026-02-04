@@ -1,14 +1,12 @@
-function Cabecera({user}){
+import { useUser } from '../contexts/UserContext'
 
-    return (
-
-            <header>
-                <p>NOMBRE: {user.nombre}</p>
-                <p>ROL: {user.rol}</p>
-
-            </header>
-    
-    )
-
+ function Cabecera() {
+  const { userName } = useUser()
+  return (
+    <header>
+        <h1>PÁGINA DE ALEJANDRO SÁNCHEZ</h1>
+      <p>Usuario Autenticado: {userName}</p>
+    </header>
+  )
 }
 export default Cabecera
