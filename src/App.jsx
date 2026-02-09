@@ -5,16 +5,17 @@ import Dashboard from './componentes/Dashboard'
 import Roles from './componentes/Roles'
 import { TokenProvider } from './contexts/TokenContext'
 import { UserProvider } from './contexts/UserContext'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   const [userName, setUserName] = useState('Victor');
 
   return (
-    <UserProvider value={userName}>
-      <TokenProvider>
-        <div className='container-fluid'>
-          <div className='row'>
-            <div className='col-12 header'>
+      <UserProvider value={userName}>
+        <TokenProvider>
+          <div className='container-fluid'>
+            <div className='row'>
+              <div className='col-12 header'>
               <Cabecera />
             </div>
           </div>
