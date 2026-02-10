@@ -8,7 +8,6 @@ import {
   Typography
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Link } from "react-router-dom";
 
 import useRoles from "../hooks/useRoles";
 import useMisModulosImpartidos from "../hooks/useMisModulosImpartidos";
@@ -16,7 +15,7 @@ import useMisModulosMatriculados from "../hooks/useMisModulosMatriculados";
 
 import opcionesMenu from "../mocks/mock-administrador";
 
-function MenuLateral() {
+function MenuLateral({ onNavigate }) {
   const { lista: roles } = useRoles();
   const { lista: impartidos } = useMisModulosImpartidos();
   const { lista: matriculados } = useMisModulosMatriculados();
@@ -31,7 +30,10 @@ function MenuLateral() {
           <AccordionDetails>
             <List>
               {opcionesMenu.administrador.map((op, i) => (
-                <ListItemButton key={i} component={Link} to={op.ruta}>
+                <ListItemButton
+                  key={i}
+                  onClick={() => onNavigate({ tipo: "admin", ruta: op.ruta })}
+                >
                   <ListItemText primary={op.nombre} />
                 </ListItemButton>
               ))}
@@ -47,11 +49,10 @@ function MenuLateral() {
           </AccordionSummary>
           <AccordionDetails>
             <List>
-              {impartidos.map(modulo => (
+              {impartidos.map((modulo) => (
                 <ListItemButton
                   key={modulo.id}
-                  component={Link}
-                  to={`/funcionalidaddocente/${modulo.id}`}
+                  onClick={() => onNavigate({ tipo: "docente", id: modulo.id })}
                 >
                   <ListItemText primary={modulo.nombre} />
                 </ListItemButton>
@@ -68,11 +69,12 @@ function MenuLateral() {
           </AccordionSummary>
           <AccordionDetails>
             <List>
-              {matriculados.map(modulo => (
+              {matriculados.map((modulo) => (
                 <ListItemButton
                   key={modulo.id}
-                  component={Link}
-                  to={`/funcionalidadestudiante/${modulo.id}`}
+                  onClick={() =>
+                    onNavigate({ tipo: "estudiante", id: modulo.id })
+                  }
                 >
                   <ListItemText primary={modulo.nombre} />
                 </ListItemButton>
@@ -84,4 +86,5 @@ function MenuLateral() {
     </>
   );
 }
+
 export default MenuLateral;

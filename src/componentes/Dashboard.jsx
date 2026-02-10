@@ -13,20 +13,9 @@ function Dashboard() {
       <p>MAIN {token}</p>
 
       <Routes>
-        {/* Home / por defecto */}
         <Route path="/" element={<NuevaEvidencia />} />
-
-        {/* Rutas que pide el enunciado */}
-        <Route
-          path="/funcionalidadestudiante/:modulo"
-          element={<FuncionalidadEstudiante />}
-        />
-        <Route
-          path="/funcionalidaddocente/:modulo"
-          element={<FuncionalidadDocente />}
-        />
-
-        {/* Cualquier otra -> al inicio */}
+        <Route path="/funcionalidadestudiante/:modulo" element={<FuncionalidadEstudiante />}/>
+        <Route path="/funcionalidaddocente/:modulo" element={<FuncionalidadDocente />}/>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </main>

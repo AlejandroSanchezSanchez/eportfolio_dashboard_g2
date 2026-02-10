@@ -3,8 +3,9 @@ import Tab from '@mui/material/Tab';
 import { useState } from 'react';
 
 import MiProgresoCompleto from './FuncionalidadesEstudiante/MiProgresoCompleto';
-import MisRevisionesPendientes from './FuncionalidadesEstudiante/SubirNuevaEvidencia';
-import SubirNuevaEvidencia from './FuncionalidadesEstudiante/MisRevisionesPendientes';
+import SubirNuevaEvidencia from './FuncionalidadesEstudiante/SubirNuevaEvidencia';
+import MisRevisionesPendientes from './FuncionalidadesEstudiante/MisRevisionesPendientes';
+
 
 const FuncionalidadEstudiante = (props) => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState(0);

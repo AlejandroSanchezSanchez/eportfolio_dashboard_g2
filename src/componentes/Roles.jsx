@@ -1,5 +1,5 @@
 import { useUser } from '../contexts/UserContext'
-import MenuLateral from './MenuLateral'
+import Menu from './Menu/Menu'
 
 function Roles() {
   const { userName } = useUser()
@@ -7,8 +7,9 @@ function Roles() {
   return (
     <aside>
       <p>NOMBRE: {userName}</p>
-      <MenuLateral />
+      <Menu />
     </aside>
   )
 }
+
 export default Roles
