@@ -1,13 +1,24 @@
-import { useState } from 'react'
-import mock_impartidos from '../mocks/mock-impartidos'
-import { useUser } from '../contexts/UserContext'
+import { useEffect, useState } from "react"
+import { useUser } from "../contexts/UserContext"
+import getModulosImpartidos from "../servicios/ModulosImpartidos/getModulosImpartidos"
 
 function useMisModulosImpartidos() {
   const { userName } = useUser()
+  const [buscando, setBuscando] = useState(false)
+  const [lista, setLista] = useState([])
 
-  const [buscando] = useState(false)
-  const [lista] = useState(mock_impartidos[userName]?.lista ?? [])
+  function obtenerModulosImpartidos() {
+    setBuscando(true)
+    getModulosImpartidos().then((data) => {
+      const modulos = data?.[userName]?.lista ?? []
+      setLista(modulos)
+      setBuscando(false)
+    })
+  }
+
+  useEffect(obtenerModulosImpartidos, [userName])
 
   return { buscando, lista }
 }
+
 export default useMisModulosImpartidos

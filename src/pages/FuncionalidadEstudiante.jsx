@@ -2,9 +2,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useState } from 'react';
 
-import MiProgresoCompleto from './FuncionalidadesEstudiante/MiProgresoCompleto';
-import SubirNuevaEvidencia from './FuncionalidadesEstudiante/SubirNuevaEvidencia';
-import MisRevisionesPendientes from './FuncionalidadesEstudiante/MisRevisionesPendientes';
+import MiProgresoCompleto from '../componentes/FuncionalidadesEstudiante/MiProgresoCompleto';
+import SubirNuevaEvidencia from '../componentes/FuncionalidadesEstudiante/SubirNuevaEvidencia';
+import MisRevisionesPendientes from '../componentes/FuncionalidadesEstudiante/MisRevisionesPendientes';
 
 
 const FuncionalidadEstudiante = (props) => {

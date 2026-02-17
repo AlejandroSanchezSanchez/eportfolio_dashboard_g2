@@ -1,4 +1,4 @@
-import tareasRA from '../mocks/mock-tareasRA';
+import tareasRA from '../../mocks/mock-tareasRA';
 import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 

@@ -2,9 +2,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { useState } from 'react';
 
-import PlanificarCriterios from './FuncionalidadesDocente/PlanificarCriterios';
-import EvaluarEvidencias from './FuncionalidadesDocente/EvaluarEvidencias';
-import AsignarRevisiones from './FuncionalidadesDocente/AsignarRevisiones';
+import PlanificarCriterios from '../componentes/FuncionalidadesDocente/PlanificarCriterios';
+import EvaluarEvidencias from '../componentes/FuncionalidadesDocente/EvaluarEvidencias';
+import AsignarRevisiones from '../componentes/FuncionalidadesDocente/AsignarRevisiones';
 
 const FuncionalidadDocente = (props) => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState(0);

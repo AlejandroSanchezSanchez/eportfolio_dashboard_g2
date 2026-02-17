@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import MenuLateral from "../MenuLateral";
+import MenuLateral from "./MenuLateral";
 
 function Menu() {
   const navigate = useNavigate();
